@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - GGU</title>
+    <link rel="shortcut icon" href="image/favicon.ico" type="image/svg+xml">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <link rel="stylesheet" href="css/contact_style.css">
+</head>
+<body>
+    <section class="header">
+        <nav>
+            <a href="index.html"><img src="image/logo.png" id="logo-img"></a>
+            
+            <div class="nav-links" id="navLinks">
+
+                <span class="icon" onclick="hidemenu()">&#10005;</span>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="Admission_page.html">Admission</a></li>
+                    <li><a href="index.html#course_call">Course</a></li>
+                    <li><a href="fees_page.html">Fees</a></li>
+                    <li><a href="Contact_page.html">Contact</a></li>
+                </ul>
+            </div> 
+            <span class="icon" onclick="showmenu()">&#9776;</span>
+        </nav>
+        <div class="wrapper">
+		<div class="r_form_wrap">
+			
+			<div class="title">
+				<p>Contact form</p>
+			</div>
+			
+			<!-- Admission from -->
+			<div class="r_form">
+				<form method="post" onsubmit="sendmail(); reset(); return false;">
+					<div class="input_wrap">
+						<label for="yourname">Your Name</label>
+						<div class="input_item">
+							<i class="fa fa-user" id="icon"></i>
+							<input type="text" name="your name" class="input" id="yourname" placeholder="Enter the name" required>
+						</div>
+					</div>
+					<div class="input_wrap">
+						<label for="emailaddress">Email Address</label>
+						<div class="input_item">
+							<i class="fa fa-envelope" id="icon"></i>
+							<input type="email" name="email address" class="input" id="emailaddress" placeholder="Enter the Email ID" required>
+						</div>
+					</div>
+
+					<div class="input_wrap">
+						<label for="phone">Phone</label>
+						<div class="input_item">
+							<i class="fa fa-commenting" id="icon"></i>
+                            <textarea name="phone" class="mess" id="phone" placeholder="Write your message..." size="500"></textarea>
+						</div>
+					</div>
+					
+	
+					<input type="submit" class="button" value="Send Message">
+					<div ></div>
+					<input type="reset" class="clear_ad" value="Clear">
+					
+				</form>
+			</div>
+        </div>
+        </div>
+    </section>
+
+    <div class="none_div"></div>
+   
+
+    
+</body>
+<script src=" https://smtpjs.com/v3/smtp.js"></script>
+<script>
+    function sendmail(){
+		Email.send({}).then(
+	message => alert("Your Message Is Successful - Team GGU")
+);
+		}
+    </script>
+<script>
+    var navLinks= document.getElementById("navLinks");
+
+function showmenu(){
+    navLinks.style.right="0";
+}   
+function hidemenu(){
+    navLinks.style.right="-200px";
+}
+</script>
+
+</html>

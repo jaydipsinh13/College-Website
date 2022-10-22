@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Online Pay Fees - GGU</title>
+  <link rel="shortcut icon" href="image/favicon.ico" type="image/svg+xml">
+  <link rel="stylesheet" href="css/fees_style.CSS">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  
+</head>
+<body>
+  <section class="header">
+    <nav>
+        <a href="index.html"><img src="image/logo.png" id="logo-img"></a>
+
+        <div class="nav-links" id="navLinks">
+
+            <span class="icon" onclick="hidemenu()">&#10005;</span>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="Admission_page.html">Admission</a></li>
+                <li><a href="index.html#course_call">Course</a></li>
+                <li><a href="fees_page.html">Fees</a></li>
+                <li><a href="Contact_page.html">Contact</a></li>
+            </ul>
+        </div> 
+        <span class="icon" onclick="showmenu()">&#9776;</span>
+    </nav>
+
+  <form onsubmit="pay()">
+    <div class="wrapper">
+      <div class="r_form_wrap">
+        
+        <div class="title">
+          <p id="header_fees">Online Pay Fees</p>
+        </div>
+        
+        <!-- Admission from -->
+
+        <div class="r_form">
+          <form method="post" onsubmit="sendmail(); reset(); return false;">
+            <div class="input_wrap">
+
+              
+              <label for="yourname">Course</label>
+              <div class="input_item">
+               
+                  <i class="fa fa-bars" aria-hidden="true"id="icon" ></i>
+                <select id="course" name="cars" class="input" required>
+                <option value="select"> Select the Course</option>
+                <option value="bca" id="bcabatch"> BCA 2021-2022 Batch</option>
+                </select>
+                <br>
+                <br>
+            
+                <label for="yourname">Your UID/Enrollment no</label>
+                <div class="input_item">
+                <!-- min="1" max="2" -->
+                <i class="fa fa-list-ol" aria-hidden="true"id="icon" ></i>
+                <input type="number"  class="input" id="uid" placeholder="Enter the last two UID digit" >
+              </div>
+            </div>
+            <p id="uid_detail">Ex: FCAB2101101001 to enter the: 01</p>
+            <input type="button" class="button" value="Get" onclick="getInputValue()">
+
+            <br>
+            <br>
+            <div class="input_wrap">
+              <label for="yourname">Student name</label>
+              <div class="input_item">
+                <i class="fa fa-user" id="icon"></i>
+                <p id="demo" class="input" ></p>
+  </div>
+            </div>
+
+                <div class="input_wrap">
+                  <label for="yourname">Pending Fees Detail</label>
+                  <div class="input_item">
+                    <i class="fa fa-credit-card" id="icon"></i>
+                    <p id="demo1" class="input" ></p>
+                  </div>
+                </div>
+
+                
+            <input type="button" class="button" value="Pay Fees" onclick="sendmail()">
+        
+</form>
+</div>
+</div>
+    </div>
+  </form>
+  </section>
+  
+<div class="none_div">
+</div>
+
+</body>
+<script src="javascript/fees_script.js"></script>
+<script>
+  var navLinks= document.getElementById("navLinks");
+
+function showmenu(){
+    navLinks.style.right="0";
+}   
+function hidemenu(){
+    navLinks.style.right="-200px";
+}
+function sendmail(){
+		Email.send({}).then(
+	message => alert("Thanks you- Team GGU")
+);
+}
+</script>
+<script src=" https://smtpjs.com/v3/smtp.js"></script>	
+</html>
