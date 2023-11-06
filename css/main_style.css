@@ -111,10 +111,12 @@ nav img{
     margin: 10px 0 40px;
     font-size: 14px;
     color: #fff;
-    
+    text-align: center;
+
+
 }
-.hero-btn{
-    display: inline-block;
+.hero-btn-container{
+    display:inline-block;
     text-decoration: none;
     color: yellow;
     border: 2px solid yellow;
@@ -124,8 +126,9 @@ nav img{
     position: relative;
     cursor: pointer;
     border-radius: 5px;
+    text-align: center;
 }
-.hero-btn:hover{
+.hero-btn-container:hover{
     color: black;
     border: 2px solid yellow;
     background:yellow;
